@@ -1,34 +1,71 @@
-/* arya-regular - latin */
+/* roboto-regular - latin */
 @font-face {
-  font-family: "Arya";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/arya-v9-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/roboto-v27-latin-regular.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("../fonts/arya-v9-latin-regular.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url("../fonts/arya-v9-latin-regular.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("../fonts/arya-v9-latin-regular.woff")
+    url("../fonts/roboto-v27-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v27-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v27-latin-regular.woff")
       format("woff"),
-    /* Modern Browsers */ url("../fonts/arya-v9-latin-regular.ttf")
+    /* Modern Browsers */ url("../fonts/roboto-v27-latin-regular.ttf")
       format("truetype"),
-    /* Safari, Android, iOS */ url("../fonts/arya-v9-latin-regular.svg#Arya")
-      format("svg"); /* Legacy iOS */
+    /* Safari, Android, iOS */
+      url("../fonts/roboto-v27-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
 }
-/* arya-700 - latin */
+
+/* roboto-condensed-300 - latin */
 @font-face {
-  font-family: "Arya";
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""),
+    url("../fonts/roboto-condensed-v19-latin-300.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-condensed-v19-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-condensed-regular - latin */
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/roboto-condensed-v19-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-condensed-v19-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-condensed-700 - latin */
+@font-face {
+  font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/arya-v9-latin-700.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("../fonts/arya-v9-latin-700.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url("../fonts/arya-v9-latin-700.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("../fonts/arya-v9-latin-700.woff")
-      format("woff"),
-    /* Modern Browsers */ url("../fonts/arya-v9-latin-700.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */ url("../fonts/arya-v9-latin-700.svg#Arya")
-      format("svg"); /* Legacy iOS */
+    url("../fonts/roboto-condensed-v19-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-condensed-v19-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/roboto-slab-v13-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-slab-v13-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-slab-700 - latin */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../fonts/roboto-slab-v13-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-slab-v13-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* Переменные */
@@ -44,6 +81,10 @@
 }
 
 /* Обнуление */
+
+html {
+  box-sizing: border-box;
+}
 
 *,
 *::before,
@@ -66,7 +107,7 @@ li {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -87,103 +128,175 @@ target(прим. h1) / context(контекстб по умолч 16px) = result
 24/15=1.5
 */
 
+/* media */
+
 /* Стили */
 
 body {
-  background-color: #dcdbd9;
+  /* background-color: #dcdbd9; */
   color: #2c2c2c;
 }
 
 #page {
   margin: 0 auto;
-  background-color: rgb(226, 226, 80);
+  /* background-color: #dcdbd9; */
+
+  /* background-color: rgb(226, 226, 80); */
 }
 
 .container {
   display: flex;
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
+  background-color: #ebeae9;
 }
 
 /* -------------------------aside---------------------------- */
 .sidebar {
-  width: 25%; /* 320px / 1280px */
-  padding: 2em 0;
-  background-color: rgb(216, 115, 115);
+  width: 29.296875%; /* 300px / 1024px */
+  /* padding: 32px 0; */
+  /* background-color: rgb(216, 115, 115); */
+  color: #888;
+}
+
+.sidebar a {
+  color: rgba(12, 116, 116, 0.5);
+}
+
+.sidebar h3 {
+  color: #999;
 }
 
 .sidebar__content {
-  width: 96.875%; /* 310px / 320px */
+  width: 96.66666666666667%; /* 290px / 300px */
   margin: 0 auto;
-  padding: 1em 0;
-  background-color: rgb(67, 217, 223);
+  padding: 16px 0 32px 0;
+  background-color: #1e2939;
 }
 
 .my-photo {
-  width: 64.51612903225806%; /* 200px / 310px */
+  width: 89.6551724137931%; /* 260px / 290px */
   height: auto;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: 16px;
   border-radius: 50%;
 }
 
 .info-block {
   margin: 0 auto;
-  width: 93.54838709677419%; /* 300px / 310px */
-  background-color: rgb(236, 113, 12);
-  padding: 1em 0.25rem;
+  width: 96.66666666666667%; /* 290px / 300px */
+  /* background-color: rgb(236, 113, 12); */
+  padding: 16px 4px;
 }
 
 .info-block__title {
-  font-family: "Arya";
+  font-family: "Roboto Slab";
   font-weight: 700;
   font-size: 1.25rem;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .info-block__list {
-  padding-left: 0.625rem;
-  margin-bottom: 1.25rem;
-  font-family: "Arya";
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-family: "Roboto";
   font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 16px;
   font-size: 1rem;
 }
 
 .contacts-item__box {
   display: flex;
+  align-items: center;
   width: 96.66666666666667%;
   height: 38px;
-}
-
-.contacts-text {
-  display: inline-block;
-  padding-left: 1.25rem;
-  padding-bottom: 0.75rem;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .contacts-item__box--icon {
-  fill: #555;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  fill: #999;
+}
+
+.contacts-text {
+  font-size: 12px;
+}
+
+.sidebar-info-skill {
+  margin-bottom: 8px;
 }
 
 /* -----------------------section-------------------------- */
 
 .section {
-  width: 75%; /* 960px / 1200px */
-  padding: 2em 0;
-  background-color: rgb(230, 9, 200);
+  width: 70.3125%; /* 720px / 1024px */
+  /* padding: 32px 0; */
+  /* background-color: rgb(230, 9, 200); */
 }
 
 .section__content {
   margin: 0 auto;
-  width: 95.83333333333333%; /* 940px / 960px */
+  width: 95.83333333333333%; /* 690px / 720px */
   /* height: 728px; */
-  background-color: rgb(4, 104, 26);
-  padding: 2em 0;
+  /* background-color: rgb(4, 104, 26); */
+  padding: 82px 0 32px 0;
+  /* font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400; */
 }
 
 .section__title {
-  font-family: "Arya";
+  font-family: "Roboto Slab";
   font-weight: 700;
+  font-style: normal;
   font-size: 40px;
-  /* font-size: calc(24px + 16 * (100vh / 1280)); */
+  margin-bottom: 16px;
+}
+
+.my-name {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.my-info-item {
+  margin-bottom: 12px;
+}
+
+.my-info-item-title {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.my-info-item-description {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.my-info-item-subheading {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.project-list-item {
+  margin-bottom: 8px;
+}
+
+.education-list-item {
+  margin-bottom: 8px;
 }
