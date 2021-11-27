@@ -71,13 +71,11 @@
 /* Переменные */
 
 :root {
-  /* --font-primary: Arial, "Helvetica Neue", Helvetica, sans-serif; */
-  --color-primary: #000;
-  --color-secondary: #fff;
-  --color-heading: #333;
-  --color-paragraph: #555;
-  --sidebar-background-color: #1e2939;
-  --font-size-heading: 22px;
+  --font-primary: "Roboto";
+  --bg-color-primary: #ebeae9;
+  --bg-color-sidebar: #1e2939;
+  --text-color-sidebar: #999;
+  --text-color-effect: #0c747480;
 }
 
 /* Обнуление */
@@ -97,7 +95,7 @@ html {
 
 body {
   background-size: cover;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 ul,
@@ -109,6 +107,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
 }
 
 .visually-hidden {
@@ -128,109 +131,105 @@ target(прим. h1) / context(контекстб по умолч 16px) = result
 24/15=1.5
 */
 
-/* media */
-
-/* Стили */
-
-body {
-  /* background-color: #dcdbd9; */
-  color: #2c2c2c;
-}
-
-#page {
-  margin: 0 auto;
-  /* background-color: #dcdbd9; */
-
-  /* background-color: rgb(226, 226, 80); */
-}
+/* -------------------Стили------------------------------ */
 
 .container {
   display: flex;
   max-width: 1024px;
   margin: 0 auto;
-  background-color: #ebeae9;
+  background-color: var(--bg-color-primary);
 }
 
 /* -------------------------aside---------------------------- */
 .sidebar {
-  width: 29.296875%; /* 300px / 1024px */
-  /* padding: 32px 0; */
-  /* background-color: rgb(216, 115, 115); */
-  color: #888;
+  width: 31.25%; /* 320px / 1024px */
 }
 
-.sidebar a {
-  color: rgba(12, 116, 116, 0.5);
+.sidebar-content {
+  width: 96.875%; /* 310px / 320px */
+  margin: 0 auto;
+  padding: 54px 6px 32px 6px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-style: normal;
+  color: var(--text-color-sidebar);
+  background-color: var(--bg-color-sidebar);
+}
+
+.sidebar img {
+  width: 67.74193548387097%; /* 210px / 310px */
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color-effect);
+}
+
+.sidebar h1 {
+  margin-bottom: 8px;
+  font-size: 1.875rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sidebar h2 {
+  margin: 0 auto;
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .sidebar h3 {
-  color: #999;
-}
-
-.sidebar__content {
-  width: 96.66666666666667%; /* 290px / 300px */
-  margin: 0 auto;
-  padding: 16px 0 32px 0;
-  background-color: #1e2939;
-}
-
-.my-photo {
-  width: 89.6551724137931%; /* 260px / 290px */
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: 16px;
-  border-radius: 50%;
-}
-
-.info-block {
-  margin: 0 auto;
-  width: 96.66666666666667%; /* 290px / 300px */
-  /* background-color: rgb(236, 113, 12); */
-  padding: 16px 4px;
-}
-
-.info-block__title {
-  font-family: "Roboto Slab";
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.info-block__list {
-  padding-left: 10px;
-  margin-bottom: 20px;
-  font-family: "Roboto";
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
-
-.contacts-item__box {
-  display: flex;
-  align-items: center;
-  width: 96.66666666666667%;
-  height: 38px;
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.contacts-item__box--icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  fill: #999;
-}
-
-.contacts-text {
-  font-size: 12px;
-}
-
-.sidebar-info-skill {
   margin-bottom: 8px;
+  font-size: 1.125rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0c747480;
+}
+
+.sidebar a {
+  color: inherit;
+}
+
+.info-list {
+  width: 93.54838709677419%; /* 290px / 310px */
+  margin: 0 auto;
+  padding: 0px 4px 12px 4px;
+  border-radius: 6px;
+}
+
+.info-item {
+  margin-bottom: 12px;
+  padding-left: 10px;
+}
+
+.info-item p {
+  text-indent: 1.5rem;
+}
+
+.info-item p:not(:last-child){
+  margin-bottom: 6px;
+}
+
+.contacts-list li {
+  display: flex;
+  width: 96.66666666666667%;
+}
+
+.contacts-list li:not(:last-child){
+  margin-bottom: 6px;
+}
+
+.contacts-list li svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  fill: var(--text-color-effect);
+}
+
+.skills-list li:not(:last-child) {
+  margin-bottom: 6px;
 }
 
 /* -----------------------section-------------------------- */
@@ -253,14 +252,6 @@ body {
 }
 
 .section__title {
-  font-family: "Roboto Slab";
-  font-weight: 700;
-  font-style: normal;
-  font-size: 40px;
-  margin-bottom: 16px;
-}
-
-.my-name {
   font-family: "Roboto Slab";
   font-weight: 700;
   font-style: normal;
