@@ -48,18 +48,14 @@
       format("svg"); /* Legacy iOS */
 }
 
-/* Переменные */
-
 :root {
   --font-primary: "Roboto";
   --bg-color-primary: #ebeae9;
   --bg-color-sidebar: #1e2939;
   --text-color-sidebar: #999;
-  --text-color-effect: #0c747480;
   --text-color-section: #1e2939;
+  --text-color-effect: #0c747480;
 }
-
-/* Обнуление */
 
 html {
   box-sizing: border-box;
@@ -107,52 +103,40 @@ a {
   clip-path: inset(50%);
   margin: -1px;
 }
-/*  шпора
-target(прим. h1) / context(контекстб по умолч 16px) = result
-24/15=1.5
-*/
-
-/* -------------------Стили------------------------------ */
 
 .container {
   display: flex;
   max-width: 1024px;
   margin: 0 auto;
   background-color: var(--bg-color-primary);
-  border: 1px solid var(--text-color-effect);
 }
 
-/* -------------------------aside---------------------------- */
-aside {
-  width: 31.25%; /* 320px / 1024px */
-}
-
-.sidebar-content {
-  width: 100%; /* 310px / 320px */
-  padding: 25px 0px 100px;
+.sidebar {
+  width: 29.296875%;
+  padding: 24px 0px;
   font-family: var(--font-primary);
+  font-size: 1rem;
   font-weight: 400;
   font-style: normal;
   color: var(--text-color-sidebar);
   background-color: var(--bg-color-sidebar);
-  font-size: 1rem;
 }
 
 .sidebar img {
-  width: 67.74193548387097%; /* 210px / 310px */
+  width: 67.74193548387097%;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   border-radius: 50%;
   border: 2px solid var(--text-color-effect);
 }
 
 .sidebar h3 {
   margin-bottom: 8px;
-  padding: 6px 16px;
-  font-size: 1.125rem;
+  padding: 0px 16px;
   text-align: center;
   text-transform: uppercase;
+  font-size: 1.125rem;
   color: #0c747480;
 }
 
@@ -160,30 +144,26 @@ aside {
   color: inherit;
 }
 
+@media print {
+  .sidebar a {
+    font-size: 12px;
+  }
+}
+
 .sidebar-list {
-  width: 100%; /* 290px / 310px */
-  margin: 0;
-  padding-left: 8px;
-  border-radius: 6px;
+  padding: 0px 16px;
 }
 
 .sidebar-item {
   margin-bottom: 12px;
-  padding-left: 10px;
 }
 
 .sidebar-item p:not(:last-child) {
-  margin-bottom: 6px;
-}
-
-.contacts-list li {
-  display: flex;
-  width: 86%;
-  margin-right: 0px;
+  margin-bottom: 8px;
 }
 
 .contacts-list li:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .contacts-list li svg {
@@ -193,52 +173,61 @@ aside {
   fill: var(--text-color-effect);
 }
 
+@media print {
+  .contacts-list li svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+
 .skills-list li:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-/* -----------------------section-------------------------- */
-
-section {
-  width: 70.3125%; /* 720px / 1024px */
+@media print {
+  .sidebar-item:last-child,
+  .section-item:last-child {
+    page-break-before: always;
+    padding-top: 24px;
+  }
 }
 
-.section-content {
-  width: 95.83333333333333%; /* 690px / 720px */
+.section {
+  width: 70.3125%;
   margin: 0 auto;
-  padding-top: 76px;
+  padding: 76px 16px 24px 16px;
   font-family: var(--font-primary);
+  font-size: 1rem;
   font-weight: 400;
   font-style: normal;
   color: var(--text-color-section);
-  font-size: 1rem;
 }
 
-.section-content h1 {
+.section h1 {
   margin-bottom: 4px;
   padding-left: 16px;
+  text-transform: uppercase;
   font-size: 2.25rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
-.section-content h2 {
-  margin: 0 auto;
+.section h2 {
   margin-bottom: 12px;
   padding-left: 16px;
   padding-bottom: 8px;
+  text-transform: uppercase;
   font-size: 1.25rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .section-list h3 {
   margin-bottom: 8px;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  background-color: var(--text-color-effect);
-  padding: 6px 16px;
+  padding: 4px 16px;
   border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  background-color: var(--text-color-effect);
 }
 
 .section-list h4 {
@@ -246,7 +235,7 @@ section {
 }
 
 .section-item p:not(:last-child) {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .section-item {
@@ -259,8 +248,9 @@ section {
 
 .project-list a {
   text-transform: uppercase;
-  color: var(--text-color-section);
   text-decoration: underline;
+  color: var(--text-color-section);
+  background-color: var(--text-color-effect);
 }
 
 .education-list li {
